@@ -19,15 +19,15 @@ insert into Activity values (3, 4, '2018-07-03', 5);
 with
 cte_player_first_login as (
     select
-		player_id,
-		min(event_date) as first_login_date
-	from Activity
-	group by player_id
+	player_id,
+	min(event_date) as first_login_date
+    from Activity
+    group by player_id
 )
 
 select
-	first.player_id,
-	activity.device_id
+    first.player_id,
+    activity.device_id
 from Activity activity
 join cte_player_first_login first
 on first.player_id = activity.player_id
