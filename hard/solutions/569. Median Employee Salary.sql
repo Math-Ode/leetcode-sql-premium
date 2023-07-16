@@ -25,7 +25,7 @@ insert into Employee values (15, 'C', 2645);
 insert into Employee values (16, 'C', 2652);
 insert into Employee values (17, 'C', 65);
 
--- MySQL Solution:
+-- MySQL Solution 1:
 with
 cte_company_emp_count as (
     select
@@ -65,4 +65,22 @@ select * from (
     and (emp_count+1)/2 = rn
     where emp_count%2=1
 )
-order by company, salary
+order by company, salary;
+
+-- Solution 2:
+with
+cte_emp_rank as (
+    select
+        *,
+        row_number() over(partition by company order by salary, id) as rn_asc,
+        row_number() over(partition by company order by salary desc, id desc) as rn_desc
+    from Employee
+)
+
+select
+    id,
+    company,
+    salary
+from cte_emp_rank
+where rn_asc in (rn_desc-1, rn_desc, rn_desc+1)
+order by company, salary;
