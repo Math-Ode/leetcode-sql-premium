@@ -1,8 +1,6 @@
 # leetcode-sql-premium
-Solutions for Leetcode SQL Premium Questions
-Questions and Solutions for Leetcode SQL Premium Questions
+Problem and Solutions for Leetcode SQL Premium Questions
 
-- List of all the questions here.
 | Q.No. | Difficulty Level | Problem Title | Solution |
 | ----- | ---------------- | ------------- | -------- |
 | 512.  | Easy             | [Game Play Analysis II](https://github.com/Math-Ode/leetcode-sql-premium/blob/main/easy/questions/512.%20Game%20Play%20Analysis%20II.txt) | [Solution](https://github.com/Math-Ode/leetcode-sql-premium/blob/main/easy/solutions/512.%20Game%20Play%20Analysis%20II.sql) |
