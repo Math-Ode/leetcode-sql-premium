@@ -11,3 +11,5 @@ Problem and Solutions for Leetcode SQL Premium Questions
 
 
 [Test](./easy/questions/test_without_space.sql)
+
+| 578.  | [Get](./medium/questions/578_Test.txt) | [Set](./medium/solutions/578_Test.sql) | | |
