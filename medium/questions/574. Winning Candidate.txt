@@ -10,7 +10,7 @@ Candidate:
 id is the primary key column for this table.
 Each row of this table contains information about the id and the name of a candidate.
 
-Table: Vote
+Vote:
 +-------------+------+
 | Column Name | Type |
 +-------------+------+
