@@ -36,3 +36,5 @@ Output:
 | Jack    | Xi   | Pascal |
 | Jane    | null | null   |
 +---------+------+--------+
+
+Follow up: If it is unknown which continent has the most students, could you write a query to generate the student report?
