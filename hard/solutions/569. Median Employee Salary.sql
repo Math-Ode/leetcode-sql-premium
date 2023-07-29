@@ -25,7 +25,7 @@ insert into Employee values (15, 'C', 2645);
 insert into Employee values (16, 'C', 2652);
 insert into Employee values (17, 'C', 65);
 
--- MySQL Solution 1:
+-- MySQL Solution 1: Using union with separate even and odd cases.
 with
 cte_company_emp_count as (
     select
@@ -67,7 +67,7 @@ select * from (
 )
 order by company, salary;
 
--- Solution 2:
+-- Solution 2: Using asc and desc concept.
 with
 cte_emp_rank as (
     select
@@ -83,4 +83,21 @@ select
     salary
 from cte_emp_rank
 where rn_asc in (rn_desc-1, rn_desc, rn_desc+1)
+order by company, salary;
+
+-- Solution 3:
+with cte_employee as (
+    select
+  	    *,
+  	    row_number() over(partition by company order by salary) as rn,
+  	    count() over(partition by company) as cnt
+    from employee
+)
+
+select
+    id,
+    company,
+    salary
+from cte_employee
+where rn between cnt/2.0 and (cnt/2.0 + 1)
 order by company, salary;
